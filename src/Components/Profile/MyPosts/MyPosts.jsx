@@ -2,11 +2,16 @@ import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
+let postData = [
+    {post: 'Hi, how are you?', likeData: 34},
+    {post: 'I am fine', likeData: 10}
+]
+
 
 const MyPosts = () => {
     return (
         <div className={s.myPostsBlock}>
-           <h3>My posts</h3>
+            <h3>My posts</h3>
             <div>
                 <div>
                     <textarea></textarea>
@@ -18,8 +23,8 @@ const MyPosts = () => {
 
             </div>
             <div className={s.posts}>
-                <Post message='Hi, how are you?' likesCount='34'/>
-                <Post message='I am fine' likesCount='10'/>
+                <Post message={postData[0].post} likesCount={postData[0].likeData}/>
+                <Post message={postData[1].post} likesCount={postData[1].likeData}/>
             </div>
         </div>
     )
