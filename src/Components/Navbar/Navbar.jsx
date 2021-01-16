@@ -1,10 +1,12 @@
 import React from "react";
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
+import DialogItem from "../Dialogs/DialogItem/DialogsItem";
 
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+   // let bestFriendsElement = props.state.navBar.map((bestFriend) => <div name={bestFriend.name} id={bestFriend.id}/>)
     return (
         <nav className={s.nav}>
             <div className={s.item}>
@@ -22,6 +24,10 @@ const Navbar = () => {
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
             </div>
+            {/*<div className={s.item}>*/}
+            {/*    <h3>Friends</h3>*/}
+            {/*    {bestFriendsElement}*/}
+            {/*</div>*/}
         </nav>
     )
 }
