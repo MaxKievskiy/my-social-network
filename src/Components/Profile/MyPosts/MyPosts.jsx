@@ -4,13 +4,15 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let postElements = props.post.map((post => <Post message={post.post} likesCount={post.likeData}/>))
+    let postElements = props.post.map((post => <Post id={post.id} message={post.post} likesCount={post.likeData}/>))
 
     let addNewPost = React.createRef();
 
     let addPost = () => {
         let text = addNewPost.current.value;
-        alert(text);
+        props.addPost(text);
+        addNewPost.current.value = "";
+
     }
 
     return (
@@ -22,7 +24,6 @@ const MyPosts = (props) => {
                 </div>
                 <div>
                     <button onClick={addPost}>Add Post</button>
-                    <button>Remove</button>
                 </div>
 
             </div>

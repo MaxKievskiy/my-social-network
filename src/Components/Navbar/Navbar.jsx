@@ -4,9 +4,8 @@ import {NavLink} from "react-router-dom";
 import DialogItem from "../Dialogs/DialogItem/DialogsItem";
 
 
-
 const Navbar = (props) => {
-   // let bestFriendsElement = props.state.navBar.map((bestFriend) => <div name={bestFriend.name} id={bestFriend.id}/>)
+    // let bestFriendsElement = props.state.navBar.map((bestFriend) => <div name={bestFriend.name} id={bestFriend.id}/>)
     return (
         <nav className={s.nav}>
             <div className={s.item}>
