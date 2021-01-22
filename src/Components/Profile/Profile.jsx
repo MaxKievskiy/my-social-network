@@ -12,7 +12,6 @@ const Profile = (props) => {
                      newPostText={props.profilePage.newPostText}
                      updateNewPostText={props.updateNewPostText}
             />
-
         </div>
     )
 }
