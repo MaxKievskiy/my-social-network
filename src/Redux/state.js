@@ -3,7 +3,7 @@ import dialogsReducer from "./dialogsReducer";
 import sideBarReducer from "./sideBarReducer";
 
 
-let store = {
+let state = {
     _state: {
         profilePage:
             {
@@ -11,13 +11,13 @@ let store = {
                     {id: 1, post: 'Hi, how are you?', likeData: 34},
                     {id: 2, post: 'I am fine', likeData: 10}
                 ],
-                newPostText: ''
+                "newPostText": ''
             },
         dialogsPage:
             {
                 dialogs: [
                     {name: 'Julia', id: 1},
-                    {name: 'Avraam', id: 2},
+                    {name: 'Avram', id: 2},
                     {name: 'Daniel', id: 3},
                     {name: 'Katrin', id: 4},
                     {name: 'Elena', id: 5},
@@ -32,7 +32,7 @@ let store = {
                     {message: 'Yes',}
 
                 ],
-                newMessageText: ''
+                "newMessageText" : ''
             },
         sideBar:{ }
     },
@@ -58,4 +58,4 @@ let store = {
     }
 }
 
-export default store;
+export default state;
