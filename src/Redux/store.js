@@ -3,7 +3,7 @@ import dialogsReducer from "./dialogsReducer";
 import sideBarReducer from "./sideBarReducer";
 
 
-let state = {
+let store = {
     _state: {
         profilePage:
             {
@@ -11,7 +11,7 @@ let state = {
                     {id: 1, post: 'Hi, how are you?', likeData: 34},
                     {id: 2, post: 'I am fine', likeData: 10}
                 ],
-                "newPostText": ''
+                newPostText: ''
             },
         dialogsPage:
             {
@@ -22,7 +22,6 @@ let state = {
                     {name: 'Katrin', id: 4},
                     {name: 'Elena', id: 5},
                     {name: 'Rivka', id: 6}
-
                 ],
                 messages: [
                     {message: 'Hello!!!'},
@@ -30,14 +29,14 @@ let state = {
                     {message: 'Bye'},
                     {message: 'Yo',},
                     {message: 'Yes',}
-
                 ],
-                "newMessageText" : ''
+                newMessageText: ''
             },
-        sideBar:{ }
+        sideBar: {}
     },
 
     _callSubscriber() {
+        console.log('State changed');
     },
 
     subscribe(observer) {
@@ -53,9 +52,8 @@ let state = {
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
         this._state.sideBar = sideBarReducer(this._state.sideBar, action);
         this._callSubscriber(this._state);
-
-
     }
 }
 
-export default state;
+export default store;
+window.store = store;
