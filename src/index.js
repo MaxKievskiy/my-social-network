@@ -8,22 +8,15 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 
 
-let rerenderEntireTree = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>,
-        document.getElementById('root')
-    );
-}
-rerenderEntireTree(store.getState());
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>,
+    document.getElementById('root')
+);
 
-store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state)
-});
 
 // API
 // If you want your app to work offline and load faster, you can change
