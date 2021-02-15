@@ -60,5 +60,4 @@ export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, curre
 
 export const setTotalUsersCountAC = (count) => ({type: TOTAL_USERS_COUNT, count});
 
-
 export default usersReducer;
