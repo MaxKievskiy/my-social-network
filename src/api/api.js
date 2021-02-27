@@ -17,16 +17,24 @@ export const UsersAPI = {
     getUsers2(pageNumber, pageSize) {
         return instance.get(`users?page=${pageNumber}&count=${pageSize}`)
             .then(response => response.data)
+    },
+    unfollow(id) {
+        return instance.delete(`follow/${id}`)
+            .then(response => response.data)
+    },
+    follow(id) {
+        return instance.post(`follow/${id}`, {})
+            .then(response => response.data)
     }
 }
 export const ProfileAPI = {
-    getProfile(userID){
+    getProfile(userID) {
         return instance.get(`profile/` + userID)
             .then(response => response.data)
     }
 }
 export const HeaderAPI = {
-    getLogin(){
+    getLogin() {
         return instance.get(`auth/me`)
             .then(response => response.data)
     }
