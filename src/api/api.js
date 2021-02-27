@@ -19,5 +19,17 @@ export const UsersAPI = {
             .then(response => response.data)
     }
 }
+export const ProfileAPI = {
+    getProfile(userID){
+        return instance.get(`profile/` + userID)
+            .then(response => response.data)
+    }
+}
+export const HeaderAPI = {
+    getLogin(){
+        return instance.get(`auth/me`)
+            .then(response => response.data)
+    }
+}
 
 
