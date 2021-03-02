@@ -1,6 +1,7 @@
 import React from "react";
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
+import userPhoto from "../../../assets/images/userPhoto.png";
 
 
 const ProfileInfo = (props) => {
@@ -15,7 +16,7 @@ const ProfileInfo = (props) => {
                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLdrhyqHAyvIXsr5Z0WOOHRJWtf-C-_UN9_Q&usqp=CAU'/>
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large !== null ? props.profile.photos.large : userPhoto}/>
                 <div>{props.profile.fullName}</div>
                 <div>{props.profile.aboutMe}</div>
 
