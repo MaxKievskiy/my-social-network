@@ -1,5 +1,5 @@
 import React from "react";
-import {addPost, updateNewPostText} from "../../../Redux/profileReducer";
+import {addPost, updateNewPostText} from "../../../redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
