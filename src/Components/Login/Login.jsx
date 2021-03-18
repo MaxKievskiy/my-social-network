@@ -1,10 +1,11 @@
 import React from 'react';
+import { Fields} from 'redux-form'
 
 
 const LoginForm = (props) => {
     return <form>
         <div>
-            <input placeholder={"Login"}/>
+            <Fields placeholder={"Login"}/>
         </div>
         <div>
             <input placeholder={"Password"}/>
