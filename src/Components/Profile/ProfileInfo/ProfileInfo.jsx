@@ -2,7 +2,6 @@ import React from "react";
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../assets/images/userPhoto.png";
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 

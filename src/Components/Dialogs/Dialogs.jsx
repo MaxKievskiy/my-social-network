@@ -8,18 +8,18 @@ import {maxLengthCreator, required} from "../../utils/validators/Validators";
 import {Textarea} from "../common/FormsControls/FormsControls";
 
 
-const Dialogs = (props) => {
+const Dialogs = ({dialogsPage, addMessage, isAuth}) => {
 
-    let state = props.dialogsPage;
+    let state = dialogsPage;
 
     let dialogElement = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
 
     let messageElement = state.messages.map(m => <Message message={m.message}/>);
 
     const addNewMessage = (values) => {
-        props.addMessage(values.newMessageBody)
+        addMessage(values.newMessageBody)
     }
-    if (!props.isAuth) return <Redirect to='/login'/>
+    if (!isAuth) return <Redirect to='/login'/>
     return (
         <div className={s.dialogs}>
             <div className={s.dialogItem}>
@@ -37,8 +37,8 @@ const Dialogs = (props) => {
 
 const maxLength100 = maxLengthCreator(100);
 
-const AddMessageForm = (props) => {
-    return <form onSubmit={props.handleSubmit}>
+const AddMessageForm = ({handleSubmit}) => {
+    return <form onSubmit={handleSubmit}>
         <div>
             <Field
                 name="newMessageBody"
