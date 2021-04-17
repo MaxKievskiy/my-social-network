@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
-import {Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from 'react-router-dom';
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -14,6 +13,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializedApp} from "./redux/appReducer";
 import Preloader from "./Components/common/Preloader/Preloader";
+import React, {Component} from "react";
 
 
 class App extends Component {
