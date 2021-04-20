@@ -5,9 +5,9 @@ import {authAPI} from "../api/api";
 const SET_USER_DATA = 'my-social-network/auth/SET_USER_DATA';
 
 let initialState = {
-    id: null,
-    login: null,
-    email: null,
+    id: null as number | null,
+    login: null as string | null,
+    email: null as string | null,
     isAuth: false// false - login out.  true - login in
 }
 export type InitialStateType = typeof initialState

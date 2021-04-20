@@ -6,13 +6,21 @@ const SET_STATUS = 'my-social-network/profile/SET_STATUS';
 
 
 export type InitialStateType = typeof initialState
+type PostType = {
+    id: number
+    post: string
+    likeData: number
+}
+type ProfileType ={
+
+}
 
 let initialState = {
     posts: [
         {id: 1, post: 'Hi, how are you?', likeData: 34},
         {id: 2, post: 'I am fine', likeData: 10}
-    ],
-    profile: null,
+    ] as Array<PostType>,
+    profile: null as ProfileType | null,
     status: ''
 }
 
@@ -45,23 +53,23 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
 }
 
 
-type AddPostType = {
+type AddPostActionType = {
     type: typeof ADD_POST
     newPostBody: string
 }
-export const addPost = (newPostBody: string): AddPostType => ({type: ADD_POST, newPostBody})
+export const addPost = (newPostBody: string): AddPostActionType => ({type: ADD_POST, newPostBody})
 
-type SetUserProfileType = {
+type SetUserProfileActionType = {
     type: typeof SET_USER_PROFILE
-    profile: number
+    profile: ProfileType
 }
-export const setUserProfile = (profile: number): SetUserProfileType => ({type: SET_USER_PROFILE, profile})
+export const setUserProfile = (profile: ProfileType): SetUserProfileActionType => ({type: SET_USER_PROFILE, profile})
 
-type SetStatusType = {
+type SetStatusActionType = {
     type: typeof SET_STATUS
     status: string
 }
-export const setStatus = (status: string): SetStatusType => ({type: SET_STATUS, status})
+export const setStatus = (status: string): SetStatusActionType => ({type: SET_STATUS, status})
 
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
@@ -80,6 +88,5 @@ export const updateUserStatus = (status: string) => async (dispatch: any) => {
         dispatch(setStatus(status));
     }
 }
-
 
 export default profileReducer;
