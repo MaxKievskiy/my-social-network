@@ -1,4 +1,5 @@
 import {profileAPI, usersAPI} from "../api/api";
+import {PostType, ProfileType} from "../types/types";
 
 const ADD_POST = 'my-social-network/profile/ADD-POST';
 const SET_USER_PROFILE = 'my-social-network/profile/SET_USER_PROFILE';
@@ -6,14 +7,6 @@ const SET_STATUS = 'my-social-network/profile/SET_STATUS';
 
 
 export type InitialStateType = typeof initialState
-type PostType = {
-    id: number
-    post: string
-    likeData: number
-}
-type ProfileType ={
-
-}
 
 let initialState = {
     posts: [
